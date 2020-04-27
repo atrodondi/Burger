@@ -1,7 +1,7 @@
 <ul id = "uneaten">
     {{#each burgers}}
         {{#unless devoured}}
-        {{burger_name}}
+        
             {{>burgers/burger-block devoured = false}}
         {{/unless}}
     {{/each}}
@@ -10,7 +10,7 @@
 <ul id="eaten">
     {{#each burgers}}
         {{#if devoured}}
-        {{burger_name}}
+        
          {{>burgers/burger-block devoured=true}}
         {{/if}}
     {{/each}}
@@ -18,8 +18,52 @@
 
 <form class ="create-burger">
 <div class = "form-group">
-    <input type ="text" id="newBurger" name="name">
+    <input type ="text" id="newBurger" name="newBurger">
 </div>
 <button type="submit">Submit New Burger</button>
 
 </form>
+
+<script type="text/javascript">
+
+    //$(".eat").on("click", function(event){
+       // var id = $(this).data("id");
+       // var neweat = $(this).data("eaten");
+       // var newDevourState = {
+       //     devoured: neweat
+       // };
+
+      //  $.ajax("/api/burgers/" + id, {
+         //   type: "PUT",
+         //   data: newDevourState
+       // }).then(
+      //      function() {
+       //         console.log("devoured value changed to", neweat);
+       //         location.reload();
+       //     }
+      //  );
+   // });
+
+   $(".create-burger").on("submit", function(event){
+       event.preventDefault();
+
+       var newBurger = {
+           burger_name: $("#newBurger").val().trim(),
+           devoured: false,
+       };
+
+       $.ajax("/api/burgers", {
+           type: "POST",
+           data: newBurger
+       }).then(
+           function(){
+               console.log("created new burger");
+           }
+       )
+   });
+
+
+
+
+
+</script>
