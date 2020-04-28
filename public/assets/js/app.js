@@ -1,8 +1,8 @@
 
-// had to call function after page loaded with this addition of the function i think? it wasnt working before i put everything inside another function, has to be page load or soemthing. i will look more into it.
+// this is so that the functions run after the page has loaded
 $(function(){
 
-    // when submitting a new burger
+    // when submitting a new burger, create a burger obj and send it to the DB
     $(".create-burger").on("submit", function(event){
     event.preventDefault();
 
@@ -16,30 +16,24 @@ $(function(){
         data: newBurger
     }).then(
         function(){
-            console.log("created burger");
             location.reload();
         }
     )
 });
 
-// when hitting devour button...
+// when hitting devour button, grab info off that button then send a PUT/update request to the DB
 $(".eat").on("click", function(event){
-    console.log("eat button hit");
     var id = $(this).data("id");
-    console.log(id)
     var newEat = $(this).data("eaten");
-    console.log(newEat)
     var newDevourState = {
         devoured: newEat
     };
-    console.log(newDevourState)
 
     $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newDevourState
     }).then(
         function() {
-            console.log("devoured value changed to", newEat);
             location.reload();
         }
     );

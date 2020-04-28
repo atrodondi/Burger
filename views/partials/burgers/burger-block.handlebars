@@ -1,8 +1,15 @@
+
 <li>
-    {{id}}.                 {{burger_name}}
+    <div class="burger d-inline-block">
+        {{id}}.                 {{burger_name}}
+    </div>
+{{!-- made the button the only thing in the unless statement since i only want the button if not devoured --}}
     {{#unless devoured}}
-<button class="eat btn btn-sm btn-danger" data-id="{{id}}" data-eaten="{{devoured}}">
-   DEVOUR IT!
-</button>
-{{/unless}}
+        <div class="d-inline">
+            <button class="eat btn btn-sm btn-danger" data-id="{{id}}" data-eaten="{{devoured}}">
+            DEVOUR IT!
+            </button>
+    </div>
+    {{/unless}}
 </li>
+

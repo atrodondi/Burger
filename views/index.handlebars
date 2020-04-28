@@ -1,10 +1,11 @@
 <div class="container justify-content-center text-center">
 <div class="row justify-content-center">
-    <img src="/assets/img/burger.png" alt="burger" class="img img-fluid">
+    <img src="/assets/img/burger.png" alt="burger" class="img img-fluid mt-5">
 </div>
 <h1>EAT DA BURGER!</h1>
         <div class="row">
-            <div class="col text-center">
+            {{!-- Uneaten burgers Column --}}
+            <div class="col ">
             <ul id = "uneaten">
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -15,8 +16,8 @@
             </ul>
             </div>
         
-
-        <div class="col text-center">
+{{!-- The Eaten Burgers Column --}}
+        <div class="col ">
             <ul id="eaten" class="text-muted">
                 {{#each burgers}}
                     {{#if devoured}}
@@ -28,15 +29,16 @@
         </div>
         </div>
 
-
+{{!-- form to add a new Burger --}}
     <div class="row">
         <div class =" col text-align-center justify-content-center">
             <form class ="create-burger">
                 <div class = "form-group">
-                    <textarea class="form-control" rows="3" type ="text" id="newBurger" name="newBurger"></textarea>
+                    <input class="form-control form-control-sm"  type ="text" id="newBurger" name="newBurger">
                 </div>
                 <div>
-            <button class="btn btn-large btn-primary"type="submit">Submit New Burger</button></div>
+            <button class="btn btn-large btn-primary"type="submit">Submit New Burger</button>
+            </div>
 
             </form>
         </div>
