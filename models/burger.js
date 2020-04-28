@@ -17,6 +17,8 @@ var burger = {
           cb(res);
         });
       },
+
+      
 }
 
 // Export the database functions for the controller (burgerController.js).

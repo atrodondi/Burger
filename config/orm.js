@@ -47,6 +47,7 @@ var orm = {
         });
     },
     create: function(table, cols, vals, cb) {
+      console.log("values: " + vals);
         var queryString = "INSERT INTO " + table;
     
         queryString += " (";
@@ -55,6 +56,7 @@ var orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
+        
     
         console.log(queryString);
     
@@ -68,6 +70,7 @@ var orm = {
       },
 
       update: function(table, objColVals, condition, cb) {
+        console.log(objColVals)
         var queryString = "UPDATE " + table;
     
         queryString += " SET ";
