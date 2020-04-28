@@ -4,16 +4,19 @@ body {
 
 
 .burger{
+    width: 400px;
+    margin: 10px 0px;
+    padding: 10px 0px;
     background: #fff;
 }
 
-li.uneaten {
-    margin: 30px 0px ;
-    line-height: 5px;
-}
 
 ul {
     list-style-type: none;
   }
 
+  h1{
+      color: red;
+  }
   
+/* BURGER CLASS HAS TO BE DIFFERENT WHEN BURGER HAS BEEN EATEN....THAT IS NEXT FIX */

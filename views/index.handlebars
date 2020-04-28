@@ -2,14 +2,17 @@
 <div class="row justify-content-center">
     <img src="/assets/img/burger.png" alt="burger" class="img img-fluid mt-5">
 </div>
-<h1>EAT DA BURGER!</h1>
+<h1>EAT-DA-BURGER!</h1>
         <div class="row">
             {{!-- Uneaten burgers Column --}}
             <div class="col ">
+                <h2>Burgers to eat:</h2>
             <ul id = "uneaten">
+                {{!-- for each item in burgers table --}}
                 {{#each burgers}}
+                {{!-- if not devoured (uneaten) --}}
                     {{#unless devoured}}
-                    
+                    {{!-- call upon the partial at the address below --}}
                         {{>burgers/burger-block devoured = false}}
                     {{/unless}}
                 {{/each}}
@@ -18,10 +21,11 @@
         
 {{!-- The Eaten Burgers Column --}}
         <div class="col ">
+            <h2>Devoured Burgers:</h2>
             <ul id="eaten" class="text-muted">
                 {{#each burgers}}
                     {{#if devoured}}
-                    
+                    {{!-- using a handle bars partial --}}
                     {{>burgers/burger-block devoured=true}}
                     {{/if}}
                 {{/each}}
@@ -38,6 +42,7 @@
                 </div>
                 <div>
             <button class="btn btn-large btn-primary"type="submit">Submit New Burger</button>
+            <h3>Enter a burger you would like to eat! Then submit it!</h3>
             </div>
 
             </form>
