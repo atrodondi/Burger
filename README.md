@@ -8,7 +8,7 @@ Eat Da Burger - This app allows the user to store burgers they would like to eat
 # How To for Devs
 1. Open route file and NPM install to get the dependencies.
 2. Change your database information in the connection.js file.
-3. Type 'node .\server.js' to get the server running.
+3. Type `node .\server.js` to get the server running.
 4. Hit up the local host + port in your browser and get going!
 
 
