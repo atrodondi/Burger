@@ -12,7 +12,7 @@
                 {{#each burgers}}
                 {{!-- if not devoured (uneaten) --}}
                     {{#unless devoured}}
-                    {{!-- call upon the partial at the address below --}}
+                    {{!-- call upon the partial at the address below. still not sure if looking for false? or passing false --}}
                         {{>burgers/burger-block devoured = false}}
                     {{/unless}}
                 {{/each}}
